@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .main {
+      width: 150px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .text {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 2px;
+      transition: color .3s;
+      -webkit-transition: color .3s;
+    }
+
+    .text::after {
+      content: ' ';
+      width: 0;
+      height: 3px;
+      background-color: blue;
+      display: block;
+      margin: 0 auto;
+      transition: width .3s;
+      -webkit-transition: width .3s;
+    }
+
+    input:checked~.text {
+      color: blue;
+    }
+
+    input:checked~.text::after {
+      width: 100px;
+    }
+
+    input[type="checkbox"] {
+      visibility: hidden;
+    }
+
+    label {
+      margin-top: 20px;
+      padding: 3px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      text-align: center;
+      box-shadow: 0 1px 2px #ddd
+    }
+
+    label:active {
+      background-color: #efefef;
+    }
+  </style>
+  <title>No.1</title>
+</head>
+
+<body>
+  <div class="main">
+    <input id="checkbox" type="checkbox" class="checkbox" />
+    <div class="text">
+      前端学院
+    </div>
+
+    <label for="checkbox">切换样式</label>
+  </div>
+</body>
+
+</html>
